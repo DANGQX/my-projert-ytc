@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติความเป็นมา - วิทยาลัยเทคนิคยะลา</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS จากหน้าแรก (เพื่อความต่อเนื่อง) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Prompt', sans-serif; color: #333; line-height: 1.6; background-color: #f9f9f9; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        header { background-color: #8B0000; color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: white; font-weight: 400; transition: 0.3s; }
+        .nav-links a:hover { color: #FFD700; }
+        footer { background-color: #2c3e50; color: white; padding: 40px 0 20px; margin-top: auto; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px; }
+        .footer-item h3 { margin-bottom: 20px; color: #FFD700; }
+        .footer-item ul li { margin-bottom: 10px; }
+        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
+        @media (max-width: 768px) { .nav-links { display: none; } }
+
+        /* --- CSS เฉพาะหน้าเกี่ยวกับเรา --- */
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/1920x400?text=History+Image');
+            background-size: cover;
+            background-position: center;
+            height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .page-header h1 { font-size: 2.5rem; }
+
+        section { padding: 60px 0; }
+        .section-head { text-align: center; margin-bottom: 50px; }
+        .section-head h2 { font-size: 2rem; color: #8B0000; }
+
+        /* Infographic Counters */
+        .info-stats {
+            background-color: white;
+            padding: 50px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .stat-item i { font-size: 3rem; color: #FFD700; margin-bottom: 10px; }
+        .counter { font-size: 3rem; font-weight: 700; color: #8B0000; display: block; }
+        .stat-item p { font-size: 1.1rem; color: #555; }
+
+        /* Interactive Timeline */
+        .timeline-section { background-color: #fff; }
+        .timeline { position: relative; max-width: 1000px; margin: 0 auto; }
+        .timeline::after { /* เส้นตรงกลาง */
+            content: ''; position: absolute; width: 4px; background-color: #8B0000; top: 0; bottom: 0; left: 50%; margin-left: -2px;
+        }
+        .timeline-container { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
+        .timeline-container::after { /* จุดบนเส้น */
+            content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: white; border: 4px solid #FFD700; top: 15px; border-radius: 50%; z-index: 1;
+        }
+        .left-container { left: 0; }
+        .right-container { left: 50%; }
+        .right-container::after { left: -10px; }
+        .timeline-content {
+            padding: 20px; background-color: white; position: relative; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .timeline-content h3 { color: #8B0000; margin-top: 10px; }
+        .time-badge { background-color: #FFD700; color: #8B0000; padding: 5px 15px; border-radius: 20px; font-weight: bold; display: inline-block; }
+
+        /* Accordion (Vision/Mission) */
+        .accordion { max-width: 800px; margin: 0 auto; }
+        .accordion-item { margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px; overflow: hidden; }
+        .accordion-header {
+            background-color: white; padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #333; transition: 0.3s;
+        }
+        .accordion-header:hover { background-color: #f1f1f1; }
+        .accordion-header.active { background-color: #8B0000; color: white; }
+        .accordion-content {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 20px; background-color: white;
+        }
+        .accordion-content p { padding: 15px 0; }
+        .accordion-header i { transition: 0.3s; }
+        .accordion-header.active i { transform: rotate(180deg); }
+
+
+        /* Responsive Timeline Fix */
+        @media screen and (max-width: 768px) {
+            .timeline::after { left: 31px; }
+            .timeline-container { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-container::after { left: 21px; }
+            .right-container { left: 0%; }
+            .page-header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-cogs"></i> วิทยาลัยเทคนิคยะลา
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li><a href="#" class="active" style="color: #FFD700;">เกี่ยวกับเรา</a></li>
+                    <li><a href="index.html#courses">หลักสูตร</a></li>
+                    <li><a href="index.html#news">ข่าวประชาสัมพันธ์</a></li>
+                    <li><a href="#contact">ติดต่อเรา</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>ประวัติความเป็นมาและข้อมูลวิทยาลัย</h1>
+            <p>รากฐานที่มั่นคง สู่การพัฒนาที่ยั่งยืน</p>
+        </div>
+    </div>
+
+    <section class="info-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-university"></i>
+                    <span class="counter" data-target="1938">0</span>
+                    <p>ปีก่อตั้ง (พ.ศ.)</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <span class="counter" data-target="4500">0</span>
+                    <p>นักศึกษาปัจจุบัน (คน)</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span class="counter" data-target="250">0</span>
+                    <p>บุคลากรทางการศึกษา (คน)</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-trophy"></i>
+                    <span class="counter" data-target="50">0</span>
+                    <p>รางวัลระดับชาติ (5 ปีหลัง)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-head">
+                <h2>เส้นทางสู่ความสำเร็จ</h2>
+                <p>พัฒนาการของวิทยาลัยเทคนิคยะลา จากอดีตสู่ปัจจุบัน</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-container left-container">
+                    <div class="timeline-content">
+                        <span class="time-badge">พ.ศ. 2481</span>
+                        <h3>จุดเริ่มต้น</h3>
+                        <p>ก่อตั้งขึ้นครั้งแรกในชื่อ "โรงเรียนช่างไม้ยะลา" เพื่อส่งเสริมการประกอบอาชีพในท้องถิ่น...</p>
+                    </div>
+                </div>
+                <div class="timeline-container right-container">
+                    <div class="timeline-content">
+                        <span class="time-badge">พ.ศ. 2503</span>
+                        <h3>ยกฐานะเป็นโรงเรียนการช่าง</h3>
+                        <p>เปลี่ยนชื่อเป็น "โรงเรียนการช่างยะลา" และเริ่มขยายหลักสูตรการสอนเพิ่มเติมในสาขาช่างยนต์และช่างไฟฟ้า...</p>
+                    </div>
+                </div>
+                <div class="timeline-container left-container">
+                    <div class="timeline-content">
+                        <span class="time-badge">พ.ศ. 2522</span>
+                        <h3>สู่ "วิทยาลัยเทคนิคยะลา"</h3>
+                        <p>ได้รับการยกฐานะขึ้นเป็นวิทยาลัยเทคนิคยะลา สังกัดกรมอาชีวศึกษา เปิดสอนระดับ ปวส....</p>
+                    </div>
+                </div>
+                <div class="timeline-container right-container">
+                    <div class="timeline-content">
+                        <span class="time-badge">ปัจจุบัน</span>
+                        <h3>ศูนย์กลางการเรียนรู้วิชาชีพสมัยใหม่</h3>
+                        <p>มุ่งเน้นการนำเทคโนโลยีสมัยใหม่มาใช้ในการเรียนการสอน สร้างความร่วมมือกับสถานประกอบการ และเป็นศูนย์ความเป็นเลิศทางวิชาชีพในภาคใต้ตอนล่าง</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #f4f4f4;">
+        <div class="container">
+            <div class="section-head">
+                <h2>ปรัชญา วิสัยทัศน์ และพันธกิจ</h2>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        ปรัชญาของวิทยาลัย <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>"ทักษะเยี่ยม เปี่ยมคุณธรรม ล้ำเลิศปัญญา พัฒนาสังคม"</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        วิสัยทัศน์ (Vision) <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>เป็นสถานศึกษาชั้นนำในการผลิตและพัฒนากำลังคนอาชีวศึกษา ให้มีคุณภาพตามมาตรฐานสากล สอดคล้องกับความต้องการของตลาดแรงงานและการพัฒนาประเทศ ภายใต้บริบทสังคมพหุวัฒนธรรม</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        พันธกิจ (Mission) <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>1. จัดการอาชีวศึกษาและฝึกอบรมวิชาชีพให้มีคุณภาพตามมาตรฐาน<br>
+                           2. ส่งเสริมและสนับสนุนการวิจัย สิ่งประดิษฐ์ และนวัตกรรม<br>
+                           3. บริการวิชาการและวิชาชีพสู่ชุมชนและสังคม<br>
+                           4. ทำนุบำรุงศาสนา ศิลปะ วัฒนธรรม และอนุรักษ์สิ่งแวดล้อม</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-item">
+                    <h3>วิทยาลัยเทคนิคยะลา</h3>
+                    <p>ถนนพิพิธภักดี ตำบลสะเตง <br>อำเภอเมือง จังหวัดยะลา 95000</p>
+                </div>
+                <div class="footer-item">
+                    <h3>ลิงก์ด่วน</h3>
+                    <ul>
+                        <li><a href="#">ระบบบริการนักศึกษา (RMS)</a></li>
+                        <li><a href="#">ตรวจสอบผลการเรียน</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h3>ติดต่อเรา</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 073-212-XXX</li>
+                        <li><i class="fas fa-envelope"></i> admin@ytc.ac.th</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 วิทยาลัยเทคนิคยะลา. สงวนลิขสิทธิ์.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Script สำหรับ Accordion (ย่อ-ขยาย)
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const headerParent = header.parentElement;
+                const content = header.nextElementSibling;
+                
+                // ปิดอันอื่นๆ ที่เปิดอยู่ (ถ้าต้องการให้เปิดได้ทีละอัน ให้เอา comment ออก)
+                /*
+                const activeHeaders = document.querySelectorAll('.accordion-header.active');
+                activeHeaders.forEach(activeHeader => {
+                    if (activeHeader !== header) {
+                        activeHeader.classList.remove('active');
+                        activeHeader.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+                */
+
+                // สลับ class active
+                header.classList.toggle('active');
+                
+                // ถ้ามี class active ให้กำหนด max-height เท่ากับความสูงของเนื้อหา
+                if (header.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+
+        // 2. Script สำหรับ Counter Animation (นับเลขขึ้น)
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // ความเร็วในการนับ (ค่ายิ่งมากยิ่งช้า)
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target'); // ค่าเป้าหมาย
+                    const count = +counter.innerText; // ค่าปัจจุบัน
+                    const inc = target / speed; // จำนวนที่เพิ่มต่อครั้ง
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target; // เมื่อถึงเป้าหมายให้หยุด
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // ใช้ Intersection Observer เพื่อให้เริ่มนับเมื่อเลื่อนหน้าจอมาถึง
+        const sectionStats = document.querySelector('.info-stats');
+        const observerOptions = { rootMargin: '-100px' }; // เริ่มทำงานเมื่อ element เข้ามาในจอ 100px
+
+        const statsObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target); // ทำงานครั้งเดียวแล้วหยุดเฝ้าดู
+                }
+            });
+        }, observerOptions);
+
+        statsObserver.observe(sectionStats);
+
+    </script>
+
+</body>
+</html>
